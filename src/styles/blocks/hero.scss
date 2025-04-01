@@ -1,0 +1,82 @@
+.hero {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 164px 0 0;
+	background: linear-gradient(180deg, #ffffff 0%, #c2d5e2 19.03%, #4981a9 36.48%, #1e6395 50.2%, #1d2e4e 100%);
+	border-radius: 0 0 40px 40px;
+	overflow: hidden;
+
+	@include max(ti) {
+		padding: 100px 0 0;
+	}
+
+	@include max(t) {
+		padding: 80px 0 0;
+	}
+
+	&__container {
+		display: flex;
+		justify-content: flex-end;
+		position: absolute;
+		bottom: 60px;
+		left: 50%;
+		transform: translateX(-50%);
+
+		@include max(tl) {
+			justify-content: flex-start;
+			position: relative;
+			bottom: unset;
+			left: unset;
+			transform: unset;
+			margin-top: 20px;
+		}
+	}
+
+	&__title {
+		text-transform: uppercase;
+	}
+
+	&__text {
+		max-width: 749px;
+		margin-top: 36px;
+		font-size: 24px;
+
+		@include max(d) {
+			font-size: fluid(22, 24, 992, 1280);
+		}
+
+		@include max(tl) {
+			font-size: fluid(20, 22, 768, 992);
+			margin-top: 10px;
+		}
+
+		@include max(ti) {
+			font-size: fluid(18, 20, 0, 768);
+		}
+	}
+
+	&__bg {
+		margin-top: -37px;
+		stroke-dasharray: 3000;
+		stroke-dashoffset: 3000;
+
+		@include max(ti) {
+			margin-top: 0;
+		}
+
+		&.show {
+			animation: dash 2s linear forwards;
+		}
+
+		.building-window {
+			fill: rgba($color-window, 0);
+			transition: fill 0.3s ease;
+
+			&.active {
+				fill: $color-window;
+			}
+		}
+	}
+}

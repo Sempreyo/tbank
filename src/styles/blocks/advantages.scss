@@ -1,0 +1,292 @@
+.advantages {
+	$parent: &;
+
+	padding: 63px 0 0;
+
+	@include max(tl) {
+		padding: 30px 0 0;
+	}
+
+	&__container {
+		max-width: 1214px;
+	}
+
+	&__grid {
+		position: relative;
+		width: 100%;
+
+		@include max(ti) {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 10px 8px 10px 15px;
+		border-radius: 15px;
+		overflow: hidden;
+		transition:
+			width 0.5s ease,
+			height 0.5s ease,
+			font-size 0.5s ease,
+			transform 0.5s ease;
+		will-change: width, height, font-size, transform;
+		margin: 0.597%;
+		box-sizing: border-box;
+
+		@include max(ti) {
+			position: relative;
+			width: calc(50% - 5px) !important;
+			height: auto !important;
+			aspect-ratio: 16 / 7;
+			margin: 0;
+		}
+
+		@include max(t) {
+			width: 100% !important;
+		}
+
+		&:first-child {
+			width: 32.113%;
+			height: 140px;
+		}
+
+		&:nth-child(2) {
+			width: 32.113%;
+			height: 140px;
+		}
+
+		&:nth-child(3) {
+			width: 32.113%;
+			height: 140px;
+		}
+
+		&:nth-child(4) {
+			width: 23.084%;
+			height: 496px;
+
+			@include max(tl) {
+				height: 440px;
+			}
+		}
+
+		&:nth-child(5) {
+			width: 16.014%;
+			height: 204px;
+
+			@include max(tl) {
+				height: 170px;
+			}
+		}
+
+		&:nth-child(6) {
+			width: 18.314%;
+			height: 204px;
+
+			@include max(tl) {
+				height: 170px;
+			}
+		}
+
+		&:nth-child(7) {
+			width: 37.65%;
+			height: 204px;
+
+			@include max(tl) {
+				height: 170px;
+			}
+		}
+
+		&:nth-child(8) {
+			width: 23.851%;
+			height: 278px;
+
+			@include max(d) {
+				height: 280px;
+			}
+
+			@include max(1050) {
+				height: 282px;
+			}
+
+			@include max(tl) {
+				height: 259px;
+			}
+
+			@include max(890) {
+				height: 261px;
+			}
+		}
+
+		&:nth-child(9) {
+			width: 23.851%;
+			height: 132px;
+
+			@include max(tl) {
+				height: 123px;
+			}
+		}
+
+		&:nth-child(10) {
+			width: 24.106%;
+			height: 579px;
+
+			@include max(tl) {
+				height: 461px;
+			}
+		}
+
+		&:nth-child(11) {
+			width: 23.851%;
+			height: 132px;
+
+			@include max(d) {
+				height: 136px;
+			}
+
+			@include max(1050) {
+				height: 138px;
+			}
+
+			@include max(tl) {
+				height: 127px;
+			}
+
+			@include max(890) {
+				height: 130px;
+			}
+		}
+
+		&:nth-child(12) {
+			width: 29.046%;
+			height: 286px;
+
+			@include max(tl) {
+				height: 190px;
+			}
+		}
+
+		&:nth-child(13) {
+			width: 20.784%;
+			height: 286px;
+
+			@include max(tl) {
+				height: 190px;
+			}
+		}
+
+		&:nth-child(14) {
+			width: 20.784%;
+			height: 286px;
+
+			@include max(tl) {
+				height: 190px;
+			}
+		}
+
+		&--small #{$parent}__text {
+			font-size: 24px;
+			line-height: 1;
+
+			@include max(d) {
+				font-size: fluid(22, 24, 992, 1280);
+			}
+
+			@include max(tl) {
+				font-size: fluid(20, 22, 768, 992);
+			}
+
+			@include max(ti) {
+				font-size: fluid(18, 20, 0, 768);
+			}
+
+			span {
+				font-size: 40px;
+
+				@include max(d) {
+					font-size: fluid(30, 40, 992, 1280);
+				}
+
+				@include max(tl) {
+					font-size: fluid(20, 30, 768, 992);
+				}
+
+				@include max(ti) {
+					font-size: fluid(30, 40, 0, 768);
+				}
+			}
+		}
+	}
+
+	&__item-link {
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+
+		&:hover + #{$parent}__bg::after {
+			background-color: rgba($color-title, 0.8);
+		}
+	}
+
+	&__bg {
+		position: absolute;
+		inset: 0;
+
+		&::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background-color: rgba($color-title, 0.4);
+			transition: background-color 0.3s ease;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__text {
+		position: relative;
+		font-size: 30px;
+		line-height: 1;
+		word-break: break-word;
+
+		@include max(d) {
+			font-size: fluid(25, 30, 992, 1280);
+		}
+
+		@include max(tl) {
+			font-size: fluid(20, 25, 768, 992);
+		}
+
+		@include max(ti) {
+			font-size: fluid(18, 20, 0, 768);
+		}
+
+		span {
+			font-size: 80px;
+			line-height: 1;
+
+			@include max(d) {
+				font-size: fluid(60, 80, 992, 1280);
+			}
+
+			@include max(tl) {
+				font-size: fluid(40, 60, 768, 992);
+			}
+
+			@include max(ti) {
+				font-size: fluid(30, 40, 0, 768);
+			}
+		}
+	}
+}

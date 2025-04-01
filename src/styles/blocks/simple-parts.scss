@@ -1,0 +1,130 @@
+.simple-parts {
+	padding: 56px 0 0;
+
+	@include max(tl) {
+		padding: 40px 0 0;
+	}
+
+	&__wrapper {
+		display: flex;
+		align-items: flex-start;
+		background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 80%, rgba(255,255,255,0) 100%);
+
+		@include max(ti) {
+			flex-direction: column;
+			border-radius: 15px;
+			padding: 40px 20px;
+			background: $color-fill;
+		}
+	}
+
+	&__text {
+		position: relative;
+		font-size: 22px;
+		line-height: 1.36;
+		background-color: $color-fill;
+		border-radius: 15px;
+		padding: 64px 53px;
+
+		@include max(ti) {
+			border-radius: 0;
+			background-color: transparent;
+			font-size: 16px;
+		}
+
+		@include max(t) {
+			font-size: 14px;
+		}
+
+		b {
+			font-size: 24px;
+			line-height: 1.25;
+
+			@include max(ti) {
+				font-size: 18px;
+			}
+
+			@include max(t) {
+				font-size: 15px;
+			}
+		}
+
+		&:first-child {
+			width: 60%;
+			padding: 64px 53px;
+
+			@include max(ti) {
+				width: 100%;
+				padding: 0;
+			}
+
+			span {
+				display: inline-block;
+				max-width: 522px;
+
+				@include max(ti) {
+					max-width: 100%;
+				}
+			}
+		}
+
+		&:last-child {
+			width: 44%;
+			padding: 79px 53px 79px 100px;
+			margin-top: 88px;
+			margin-left: -50px;
+
+			@include max(tl) {
+				padding: 64px 53px;
+			}
+
+			@include max(ti) {
+				width: 100%;
+				margin-top: 0;
+				margin-left: 0;
+				padding: 0;
+			}
+		}
+	}
+
+	&__angle-1,
+	&__angle-2 {
+		content: "";
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		background-color: $color-fill;
+
+		@include max(ti) {
+			display: none;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			width: 40px;
+			height: 40px;
+			background-color: $white;
+		}
+	}
+
+	&__angle-1 {
+		top: 48px;
+		right: -40px;
+
+		&::after {
+			border-bottom-left-radius: 15px;
+		}
+	}
+
+	&__angle-2 {
+		bottom: -40px;
+		left: calc(100% - 90px);
+		z-index: 1;
+
+		&::after {
+			border-top-right-radius: 15px;
+		}
+	}
+}

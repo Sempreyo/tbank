@@ -1,0 +1,32 @@
+doctype html
+
+block vars
+include ../mixins/mixins
+
+html(lang='ru')
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		meta(name='description', content='C3Solutions')
+		meta(name='keywords', content='')
+
+		link(href='css/main.min.css', rel='stylesheet', type='text/css')
+		title= `${page.title}`
+
+	body
+		block header
+
+		main.main
+			block main
+
+		.button-up
+			+icon('button-up')(width='18', height='28')
+
+		block footer
+			include ../blocks/footer
+
+	block modals
+
+	script(src="js/main.min.js" defer)
+
+	block scripts

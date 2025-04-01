@@ -1,0 +1,47 @@
+.text-columns {
+	$parent: &;
+
+	padding: 53px 0 0;
+
+	@include max(tl) {
+		padding: 40px 0 0;
+	}
+
+	&__wrapper {
+		display: grid;
+		grid-template-columns: 7fr 8fr;
+		gap: 8px;
+		margin-top: 14px;
+
+		@include max(tl) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@include max(ti) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&--titles {
+		padding-top: 44px;
+
+		#{$parent} {
+			&__wrapper {
+				gap: 100px;
+				margin-top: 0;
+
+				@include max(ti) {
+					gap: 20px;
+				}
+			}
+
+			&__text {
+				margin-top: 23px;
+
+				@include max(ti) {
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+}

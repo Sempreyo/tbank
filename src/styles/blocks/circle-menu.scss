@@ -1,0 +1,72 @@
+.circle-menu {
+	position: relative;
+
+	&__circle {
+		position: absolute;
+		inset: 30px;
+		border: 1px solid $color-border;
+		border-radius: 50%;
+	}
+
+	&__border {
+		position: absolute;
+		inset: 29px;
+		width: 87.74%;
+		height: 87.9%;
+
+		@include max(d) {
+			width: 80.5%;
+			height: 81%;
+		}
+	}
+
+	&__centered-icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 50%;
+		height: 50%;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+
+		&.active {
+			opacity: 1;
+		}
+	}
+
+	&__border-item {
+		opacity: 0;
+		transition: opacity 0.3s ease;
+
+		&.active {
+			opacity: 1;
+		}
+	}
+
+	&__items {
+		pointer-events: auto;
+		width: 481px;
+		height: 481px;
+
+		@include max(d) {
+			width: 300px;
+			height: 300px;
+		}
+	}
+
+	&__item {
+		display: block;
+		pointer-events: bounding-box;
+		cursor: pointer;
+		transition: opacity 0.3s ease;
+
+		&:hover {
+			opacity: 0.7;
+		}
+
+		path {
+			pointer-events: none;
+		}
+	}
+}

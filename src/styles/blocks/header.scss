@@ -1,0 +1,272 @@
+.header {
+	$parent: &;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	padding: 48px 0 20px;
+	transition: 0.5s ease;
+
+	@include max(ti) {
+		padding: 20px 0;
+	}
+
+	&--inner {
+		padding: 33px 0 20px;
+
+		#{$parent} {
+			&__container {
+				align-items: center;
+			}
+
+			&__left {
+				gap: 15px;
+			}
+
+			&__logo-cnews {
+				width: 82px;
+				height: 16px;
+			}
+
+			&__burger {
+				position: relative;
+				right: unset;
+				bottom: unset;
+				min-width: 60px;
+				max-width: 60px;
+				height: 60px;
+				padding: 17px;
+
+				@include max(ti) {
+					min-width: 30px;
+					max-width: 30px;
+					height: 30px;
+					padding: 6px;
+				}
+			}
+		}
+	}
+
+	&--bg {
+		background-color: $white;
+		box-shadow: 4px 4px 34px 0 rgba($black, 0.2);
+		padding: 40px 0;
+	}
+
+	&--hide {
+		transform: translateY(-100%);
+	}
+
+	&__container {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: 20px;
+
+		@include max(ti) {
+			align-items: center;
+			gap: 10px;
+		}
+	}
+
+	&__left,
+	&__right {
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
+
+	&__left {
+		gap: 40px;
+
+		@include max(ti) {
+			gap: 10px;
+		}
+	}
+
+	&__right {
+		@include max(ti) {
+			gap: 15px;
+		}
+	}
+
+	&__logo-ic {
+		width: 183px;
+		height: 44px;
+
+		@include max(t) {
+			width: 80px;
+			height: 19px;
+		}
+	}
+
+	&__logo-eurolan {
+		width: 183px;
+		height: 42px;
+
+		@include max(t) {
+			width: 80px;
+			height: 18px;
+		}
+	}
+
+	&__logo-cnews {
+		width: 103px;
+		height: 20px;
+
+		@include max(t) {
+			width: 80px;
+			height: 15px;
+		}
+	}
+
+	&__burger {
+		position: absolute;
+		right: 0;
+		bottom: -98px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 60px;
+		max-width: 60px;
+		border-radius: 50%;
+		height: 60px;
+		padding: 17px;
+		background-color: $color-title;
+		cursor: pointer;
+
+		@include max(ti) {
+			position: relative;
+			right: unset;
+			bottom: unset;
+			min-width: 30px;
+			max-width: 30px;
+			height: 30px;
+			padding: 6px;
+		}
+
+		&:hover #{$parent}__burger-line {
+			&::before {
+				transform: translateY(-3px);
+
+				@include max(ti) {
+					transform: translateY(-2px);
+				}
+			}
+
+			&::after {
+				width: 100%;
+				transform: translateY(3px);
+
+				@include max(ti) {
+					transform: translateY(2px);
+				}
+			}
+		}
+	}
+
+	&__burger-line {
+		position: relative;
+		width: 100%;
+		height: 2px;
+		background-color: $color-border;
+		transition: 0.3s ease;
+
+		&::before,
+		&::after {
+			position: absolute;
+			right: 0;
+			display: block;
+			height: 2px;
+			background-color: $color-border;
+			border-radius: 10px;
+			content: "";
+			transition: width 0.2s ease, transform 0.2s ease 0.3s;
+		}
+
+		&::before {
+			top: -6px;
+			width: 100%;
+
+			@include max(ti) {
+				top: -4px;
+			}
+		}
+
+		&::after {
+			bottom: -6px;
+			width: 75%;
+
+			@include max(ti) {
+				bottom: -4px;
+			}
+		}
+	}
+
+	&__menu-wrapper {
+		position: fixed;
+		top: 0;
+		right: 0;
+		z-index: 10;
+		max-width: 374px;
+		width: 100%;
+		padding: 40px 25px 40px 40px;
+		background-color: $color-title;
+		border-radius: 15px;
+		overflow: hidden;
+		transform: translateX(100%);
+		transition: 0.3s ease;
+	}
+
+	&__menu-bg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 1158px;
+		height: 644px;
+	}
+
+	&__menu {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 28px;
+	}
+
+	&__menu-item-type {
+		color: $color-border;
+		font-size: 14px;
+	}
+
+	&__menu-item-link {
+		display: inline-block;
+		color: rgba($white, 1);
+		font-size: 20px;
+		margin-top: 7px;
+		transition: color 0.3s ease;
+
+		&:hover {
+			color: rgba($white, 0.7);
+		}
+	}
+
+	&__menu-close {
+		position: absolute;
+		top: 25px;
+		right: 25px;
+		z-index: 1;
+		align-items: center;
+		justify-content: center;
+		width: 21px;
+		height: 21px;
+		cursor: pointer;
+		transition: 0.3s ease;
+
+		&:hover {
+			transform: rotate(90deg);
+		}
+	}
+}

@@ -1,0 +1,32 @@
+.button-up {
+	position: fixed;
+	left: 88.7%;
+	bottom: 35px;
+	z-index: 12;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s ease;
+	cursor: pointer;
+
+	@include max(tl) {
+		bottom: 30px;
+	}
+
+	&--visible {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	&:hover svg {
+		transform: translateY(-3px);
+	}
+
+	svg {
+		transition: 0.3s ease;
+	}
+}

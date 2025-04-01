@@ -1,0 +1,17 @@
+.article-subtitle {
+	color: $color-text;
+	font-weight: 400;
+	font-size: 40px;
+
+	@include max(tl) {
+		font-size: 30px;
+	}
+
+	@include max(ti) {
+		font-size: 25px;
+	}
+
+	@include max(t) {
+		font-size: 22px;
+	}
+}

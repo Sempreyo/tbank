@@ -1,0 +1,33 @@
+header.header
+	.container.header__container
+		.header__left
+			a(href='#', target='_blank')
+				+picture('logo-ic', 'png', 'header__logo-ic', 'ИЦ Телеком-Сервис')
+			a(href='#', target='_blank')
+				+picture('logo-eurolan', 'png', 'header__logo-eurolan', 'Eurolan')
+		.header__right
+			a(href='#', target='_blank')
+				+icon('logo-cnews', 'header__logo-cnews')
+			.header__burger
+				.header__burger-line
+			.overlay
+			.header__menu-wrapper
+				+icon('interviews-bg', 'header__menu-bg')
+				.header__menu-close
+					+icon('close')(width='21', height='21')
+				ul.header__menu
+					li.header__menu-item
+						p.header__menu-item-type Статья
+						a.header__menu-item-link(href="#") Как создавали новую штаб-квартиру Т-Банка?
+					li.header__menu-item
+						p.header__menu-item-type Интервью
+						a.header__menu-item-link(href="#") Владимир Романов: ”Экономия сегодня может обернуться значительными затратами завтра”
+					li.header__menu-item
+						p.header__menu-item-type Интервью
+						a.header__menu-item-link(href="#") Олег Ивочкин: “Информационное моделирование зданий становится все востребованнее”
+					li.header__menu-item
+						p.header__menu-item-type Статья
+						a.header__menu-item-link(href="#") Для чего нужна системная гарантия вендора на СКС?
+					li.header__menu-item
+						p.header__menu-item-type Статья
+						a.header__menu-item-link(href="#") Коллега и партнер: как выбрать интегратора и поставщика <br> для ИТ-проекта

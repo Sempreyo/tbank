@@ -1,0 +1,38 @@
+.custom-content {
+	padding: 53px 0 0;
+
+	@include max(tl) {
+		padding: 40px 0 0;
+	}
+
+	.article-subtitle {
+		margin-bottom: 23px;
+
+		@include max(ti) {
+			margin-bottom: 10px;
+		}
+	}
+
+	.article-text {
+		margin-bottom: 40px;
+
+		@include max(ti) {
+			margin-bottom: 25px;
+		}
+	}
+
+	&__image {
+		display: block;
+		width: 100%;
+		border-radius: 15px;
+		overflow: hidden;
+		margin-bottom: 20px;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			aspect-ratio: 16 / 9;
+		}
+	}
+}

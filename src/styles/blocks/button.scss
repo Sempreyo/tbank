@@ -1,0 +1,22 @@
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 280px;
+	width: 100%;
+	padding: 14px 20px;
+	border-radius: 6px;
+	background-color: $white;
+	color: $color-title;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1.48;
+	text-align: center;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: 0.3s ease;
+
+	&:hover {
+		background-color: rgba($white, 0.7);
+	}
+}

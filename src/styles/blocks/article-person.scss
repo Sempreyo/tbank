@@ -1,0 +1,71 @@
+.article-person {
+	$parent: &;
+
+	&--offset {
+		#{$parent} {
+			&__top {
+				padding-bottom: 50px;
+				margin-bottom: 54px;
+
+				@include max(d) {
+					padding-bottom: 20px;
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+
+	&__top {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		border-bottom: 1px solid $color-border;
+		padding-bottom: 17px;
+		margin-bottom: 34px;
+
+		@include max(d) {
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__image {
+		width: 130px;
+		height: 130px;
+	}
+
+	&__name {
+		font-size: 30px;
+		line-height: 1;
+
+		@include max(d) {
+			font-size: fluid(25, 30, 992, 1280);
+		}
+
+		@include max(tl) {
+			font-size: fluid(20, 25, 768, 992);
+		}
+
+		@include max(ti) {
+			font-size: fluid(14, 20, 0, 768);
+		}
+	}
+
+	&__text {
+		max-width: 616px;
+		font-size: 20px;
+		line-height: 1.2;
+
+		@include max(d) {
+			font-size: fluid(18, 20, 992, 1280);
+		}
+
+		@include max(tl) {
+			font-size: fluid(16, 18, 768, 992);
+		}
+
+		@include max(ti) {
+			font-size: fluid(14, 16, 0, 768);
+		}
+	}
+}

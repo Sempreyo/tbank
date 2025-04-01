@@ -1,0 +1,99 @@
+.quote {
+	padding-top: 40px;
+
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+		border-radius: 15px;
+		background-color: $color-fill;
+		padding: 50px 55px;
+
+		@include max(tl) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		@include max(ti) {
+			padding: 40px 20px;
+		}
+	}
+
+	&__person {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		min-width: 405px;
+		max-width: 405px;
+
+		@include max(tl) {
+			min-width: auto;
+			max-width: 100%;
+			width: 100%;
+		}
+
+		@include max(t) {
+			flex-direction: column;
+			gap: 8px;
+		}
+	}
+
+	&__image {
+		min-width: 145px;
+		max-width: 145px;
+		height: 145px;
+		border-radius: 15px;
+		background-color: $color-quote-image;
+		overflow: hidden;
+		box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+
+		@include max(ti) {
+			min-width: 120px;
+			max-width: 120px;
+			height: 120px;
+		}
+
+		@include max(t) {
+			min-width: 80px;
+			max-width: 80px;
+			height: 80px;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			object-position: center bottom;
+		}
+	}
+
+	&__name {
+		font-size: 26px;
+
+		@include max(ti) {
+			font-size: 24px;
+		}
+
+		@include max(t) {
+			font-size: 22px;
+			text-align: center;
+		}
+	}
+
+	&__text {
+		max-width: 660px;
+		font-size: 24px;
+
+		@include max(tl) {
+			max-width: 100%;
+			font-size: 22px;
+			border-top: 2px solid rgba($color-text, 0.5);
+			padding-top: 20px;
+		}
+
+		@include max(ti) {
+			font-size: 20px;
+		}
+	}
+}

@@ -1,0 +1,109 @@
+.article-block {
+	color: $color-text;
+	padding: 135px 0 0;
+
+	@include max(ti) {
+		padding: 100px 0 0;
+	}
+
+	@include max(t) {
+		padding: 90px 0 0;
+	}
+
+	&__top {
+		position: relative;
+		border-radius: 15px;
+		background: linear-gradient(96deg, #071b29 12%, #063159 56%, #0460bf 101%);
+		padding: 73px 52px 80px;
+		overflow: hidden;
+
+		@include max(ti) {
+			padding: 40px 20px;
+		}
+
+		&::before {
+			@include max(ti) {
+				content: "";
+				position: absolute;
+				inset: 0;
+				z-index: 1;
+				background-color: rgba($black, 0.7);
+			}
+		}
+	}
+
+	&__top-group {
+		position: relative;
+		z-index: 1;
+		max-width: 645px;
+
+		@include max(tl) {
+			max-width: 520px;
+		}
+
+		@include max(900) {
+			max-width: 400px;
+		}
+
+		@include max(ti) {
+			max-width: 100%;
+		}
+	}
+
+	&__title {
+		color: $white;
+		font-weight: 400;
+		font-size: 50px;
+
+		@include max(tl) {
+			font-size: 35px;
+		}
+
+		@include max(900) {
+			font-size: 32px;
+		}
+	}
+
+	&__annonce {
+		color: $white;
+		font-size: 20px;
+		margin-top: 30px;
+
+		@include max(tl) {
+			font-size: 18px;
+		}
+
+		@include max(ti) {
+			margin-top: 20px;
+		}
+	}
+
+	&__image {
+		position: absolute;
+		bottom: -4px;
+		right: -85px;
+
+		@include max(d) {
+			max-width: 360px;
+		}
+	}
+
+	&__main {
+		padding: 70px 0 0;
+		background-image: url("../images/article-pattern.png");
+		background-repeat: repeat-y;
+		background-size: cover;
+
+		@include max(tl) {
+			padding: 40px 0 0;
+		}
+	}
+
+	&__slideshow {
+		margin-right: -53px;
+
+		@include max(dl) {
+			margin-right: 0;
+		}
+	}
+}

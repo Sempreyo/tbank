@@ -1,0 +1,45 @@
+.horizontal-slider {
+	padding: 58px 0 90px;
+	overflow: hidden;
+
+	@include max(tl) {
+		padding: 40px 0 90px;
+	}
+
+	@include max(ti) {
+		padding: 40px 0 56px;
+	}
+
+	&__text {
+		margin-top: 28px;
+
+		@include max(tl) {
+			margin-top: 10px;
+		}
+	}
+
+	&__slider {
+		position: relative;
+		width: 100%;
+		margin-top: 22px;
+
+		.swiper {
+			overflow: visible;
+		}
+	}
+
+	&__nav {
+		bottom: -89px;
+		right: 55px;
+		justify-content: flex-end;
+
+		@include max(tl) {
+			right: unset;
+			justify-content: center;
+		}
+
+		@include max(ti) {
+			bottom: -46px;
+		}
+	}
+}

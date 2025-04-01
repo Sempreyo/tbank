@@ -1,0 +1,286 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+html {
+	-moz-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-o-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+	scroll-behavior: smooth;
+}
+
+body {
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	font-family: $mainFont;
+	background-color: $white;
+	color: $white;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 1.2;
+
+	/* iOS fix */
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	-webkit-locale: auto;
+	white-space: normal;
+}
+
+main {
+	position: relative;
+	z-index: 1;
+}
+
+a {
+	color: $white;
+	text-decoration: none;
+}
+
+svg {
+	width: auto;
+	height: auto;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+input,
+button {
+	-webkit-appearance: none;
+}
+
+input,
+button,
+select,
+textarea {
+	font: inherit;
+	background-color: transparent;
+	border: 0;
+	border-radius: 0;
+	outline: 0;
+}
+
+input,
+textarea {
+	padding: 0;
+	margin: 0;
+
+	&:focus::placeholder {
+		opacity: 0;
+	}
+}
+
+ul,
+ol {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+[hidden] {
+	display: none !important;
+}
+
+/* Mobile-menu */
+[data-state="mobile-menu"] {
+	overflow: hidden;
+
+	.header__menu-wrapper {
+		transform: translateX(0);
+	}
+}
+
+/* Adv mark article */
+.token-mark-block {
+	position: relative;
+	z-index: 20;
+	display: block;
+    max-width: 1288px;
+    width: 100%;
+    padding: 0 20px;
+    margin: 30px auto 0;
+    box-sizing: border-box;
+}
+
+.article-mark {
+	&:hover + .token-info {
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+
+.token-info {
+	position: absolute;
+	left: 0;
+	bottom: 100%;
+	width: 270px;
+	border: 2px solid $white;
+	background: rgba($black, 0.7);
+	backdrop-filter: blur(11px);
+	border-radius: 2px;
+	padding: 20px 10px;
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.3s ease;
+}
+
+.token-info-item {
+	display: block;
+	color: $white;
+	font-size: 12px;
+	line-height: 1.2;
+
+	a {
+		color: $white;
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+/* Mobile-menu */
+[data-state="mobile-menu"] {
+	overflow: hidden;
+
+	.header__menu-wrapper {
+		transform: translateX(0);
+	}
+
+	.overlay {
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+
+/* Оверлей для меню */
+.overlay {
+	position: fixed;
+	inset: 0;
+	z-index: 9;
+	background-color: rgba($black, 0.8);
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.3s ease;
+}
+
+/* Swiper */
+.swiper-nav {
+	position: absolute;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	width: 100%;
+	pointer-events: none;
+
+	.swiper-btn-prev,
+	.swiper-btn-next {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 37px;
+		height: 37px;
+		border-radius: 50%;
+		cursor: pointer;
+		pointer-events: auto;
+		transition: filter 0.3s ease;
+
+		svg {
+			transition: transform 0.3s ease;
+		}
+	}
+
+	.swiper-btn-prev {
+		background: linear-gradient(180deg, #055db8 0%, #072b4b 100%);
+
+		&:not(.swiper-button-disabled):hover svg {
+			transform: translateX(-2px);
+		}
+	}
+
+	.swiper-btn-next {
+		background: linear-gradient(180deg, #055db8 0%, #072b4b 100%);
+
+		&:not(.swiper-button-disabled):hover svg {
+			transform: translateX(2px);
+		}
+	}
+
+	.swiper-button-disabled {
+		filter: grayscale(100%);
+		cursor: default;
+	}
+
+	&--big {
+		gap: 14px;
+
+		.swiper-btn-prev,
+		.swiper-btn-next {
+			width: 57px;
+			height: 57px;
+
+			@include max(ti) {
+				width: 37px;
+				height: 37px;
+			}
+		}
+	}
+}
+
+/* Swiper pagination */
+.swiper-pagination {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	position: absolute;
+	top: unset !important;
+	bottom: 16px !important;
+	z-index: 12;
+
+	@include max(tl) {
+		display: flex;
+	}
+
+	.swiper-pagination-bullet {
+		width: 20px;
+		height: 20px;
+		opacity: 0.5;
+		background-color: $white;
+		margin: 0 !important;
+
+		&-active {
+			opacity: 1;
+		}
+	}
+}

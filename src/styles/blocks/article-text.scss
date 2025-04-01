@@ -1,0 +1,24 @@
+.article-text {
+	color: $color-text;
+	font-size: 20px;
+
+	@include max(tl) {
+		font-size: 18px;
+	}
+
+	@include max(ti) {
+		font-size: 16px;
+	}
+
+	@include max(t) {
+		font-size: 14px;
+	}
+
+	p + p {
+		margin-top: 12px;
+
+		@include max(tl) {
+			margin-top: 5px;
+		}
+	}
+}
