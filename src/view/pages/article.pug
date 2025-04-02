@@ -287,5 +287,26 @@ block main
 						Проектирование велось с использованием как стандартных 2D-чертежей, так и передовых BIM-технологий, основанных
 						на интеллектуальном 3D-моделировании. Применение BIM позволило участникам проекта оперативно обмениваться
 						данными, согласовывать документы и моделировать системы на всех этапах жизненного цикла: от концепции до монтажа.
-					a.custom-content__image(href='./images/articles/1.jpg', data-lightbox='image')
-						img(src='./images/articles/1.jpg', alt='')
+					.custom-content__image-with-caption
+						a.custom-content__image(href='/inc/it-project-tbank/images', data-lightbox='image')
+							img(src='/inc/it-project-tbank/images', alt='')
+						.custom-content__image-caption Олег Ивочкин, ИЦ «Телеком-сервис»
+
+			.container.container--big
+				.quote.quote--text-only
+					.quote__wrapper
+						+icon('quote', 'quote__icon quote__icon--top')
+						.quote__text.
+							«Мы гордимся тем, что сумели справиться с поставленными задачами в требуемые сроки и с высоким качеством.
+							Построенная инженерная и ИТ-инфраструктура позволит сотрудникам успешно осуществлять как коммерческую
+							деятельность, так и сложные ИТ-разработки»
+						+icon('quote', 'quote__icon')
+			
+			.container
+				.filled-parts.filled-parts--smooth
+					.filled-parts__wrapper
+						+icon('interviews-bg', 'filled-parts__bg-mobile')
+						.filled-parts__text.article-text.
+							Проекты ИЦ ТЕЛЕКОМ-СЕРВИС по созданию ИТ и инженерной инфраструктуры для ключевых московских и региональных
+							подразделений крупнейшего онлайн-провайдера финансовых услуг стали залогом коммерческого успеха Т-Банка
+							и сыграли важную роль в его становлении как ведущего игрока на рынке.

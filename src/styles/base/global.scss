@@ -141,7 +141,7 @@ ol {
 	left: 0;
 	bottom: 100%;
 	width: 270px;
-	border: 2px solid $white;
+	border: 2px solid $color-border;
 	background: rgba($black, 0.7);
 	backdrop-filter: blur(11px);
 	border-radius: 2px;
@@ -216,6 +216,7 @@ ol {
 		transition: filter 0.3s ease;
 
 		svg {
+			color: $white;
 			transition: transform 0.3s ease;
 		}
 	}

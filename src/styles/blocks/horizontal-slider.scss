@@ -1,13 +1,13 @@
 .horizontal-slider {
-	padding: 58px 0 90px;
 	overflow: hidden;
+	padding: 0 0 120px;
 
 	@include max(tl) {
-		padding: 40px 0 90px;
+		padding: 0 0 120px;
 	}
 
 	@include max(ti) {
-		padding: 40px 0 56px;
+		padding: 0 0 60px;
 	}
 
 	&__text {
@@ -16,6 +16,11 @@
 		@include max(tl) {
 			margin-top: 10px;
 		}
+
+		&:first-child,
+		&:only-child {
+			margin-top: 0;
+		}
 	}
 
 	&__slider {
@@ -23,8 +28,12 @@
 		width: 100%;
 		margin-top: 22px;
 
-		.swiper {
+		.swiper:not(.other-articles) {
 			overflow: visible;
+		}
+
+		.other-articles .slider-card__image img {
+			aspect-ratio: 16 / 10;
 		}
 	}
 

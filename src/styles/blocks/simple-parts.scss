@@ -1,8 +1,8 @@
 .simple-parts {
-	padding: 56px 0 0;
+	padding: 0 0 56px;
 
 	@include max(tl) {
-		padding: 40px 0 0;
+		padding: 0 0 40px;
 	}
 
 	&__wrapper {

@@ -1,8 +1,40 @@
 .filled-parts {
-	padding: 56px 0 0;
+	$parent: &;
+
+	padding: 0 0 56px;
 
 	@include max(tl) {
-		padding: 40px 0 0;
+		padding: 0 0 40px;
+	}
+
+	&--smooth {
+		padding: 0 0 40px;
+
+		@include max(ti) {
+			padding: 0 0 20px;
+		}
+
+		#{$parent} {
+			&__wrapper {
+				background: linear-gradient(180deg, #081c2a 0%, #07345e 54.27%, #055db6 100%);
+				border-radius: 15px;
+				min-height: auto;
+				padding: 40px 52px;
+
+				@include max(ti) {
+					padding: 30px 20px;
+				}
+			}
+
+			&__bg-mobile {
+				display: block;
+			}
+
+			&__text {
+				max-width: 100%;
+				margin-top: 0;
+			}
+		}
 	}
 
 	&__wrapper {

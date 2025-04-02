@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
 						slidesPerView: 2,
 					},
 					768: {
-						slidesPerView: 'auto',
+						slidesPerView: el.classList.contains("other-articles") ? 3 : 'auto',
 						spaceBetween: 20
 					}
 				}
