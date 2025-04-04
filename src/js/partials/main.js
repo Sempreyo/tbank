@@ -16,11 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
 							.forEach(el => {
 								setTimeout(() => {
 									el.classList.add("active");
-								}, 400 * +el.dataset.order);
+								}, 800 * +el.dataset.order);
 							});
 					}, 1100);
 				}
-			});
+			}, {threshold: 0.5});
 		});
 
 		heroObserver.observe(heroBg);

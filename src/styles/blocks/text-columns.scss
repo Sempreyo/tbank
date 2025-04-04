@@ -11,9 +11,19 @@
 		//gap: 8px;
 		margin-top: 14px;
 		column-count: 2;
+		column-gap: 30px;
 
 		@include max(ti) {
 			column-count: 1;
+			column-gap: 0;
+		}
+	}
+
+	.article-text {
+		text-align: justify;
+
+		@include max(ti) {
+			text-align: left;
 		}
 	}
 
@@ -44,6 +54,10 @@
 					margin-top: 10px;
 				}
 			}
+		}
+
+		.article-text {
+			text-align: left;
 		}
 	}
 }

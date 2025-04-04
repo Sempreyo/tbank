@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const gridElement = document.querySelector(".advantages__grid");
+	const items = document.querySelectorAll(".advantages__item");
 	const SKIP_ELEMENT_INDEX = 8;
 	let grid = "";
 	let interval = "";
@@ -25,14 +26,22 @@ document.addEventListener("DOMContentLoaded", () => {
 		gridInit();
 
 		const gridDestroy = () => {
-			const items = document.querySelectorAll(".advantages__item");
+			const gridHeight = gridElement.offsetHeight;
 
 			items.forEach(item => {
 				item.removeAttribute("style");
+
+				if (item.classList.contains("advantages__item--small")) {
+					item.classList.remove("advantages__item--small");
+					item.style.transform = "unset";
+				}
 			});
 
-			grid.destroy();
-			grid = null;
+			if (grid && grid._isDestroyed === false) {
+				grid.destroy();
+				grid = null;
+				gridElement.style.height = `${gridHeight}px`;
+			}
 		}
 
 		/* Получаем 2 случайных индекса элементов */
@@ -95,19 +104,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		/* Запускаем анимацию свапа каждые 4 секунды */
 		const animationInit = () => {
-			interval = setInterval(() => {
-				const items = grid.getItems();
-				if (items.length < 2) return;
-				const [index1, index2] = getRandomIndexes(items.length);
-				swapItems(index1, index2);
-			}, 4000);
+			if (grid && grid._isDestroyed === false) {
+				grid.on("layoutEnd", function () {
+					items.forEach(item => {
+						console.log(item.dataset.small !== undefined)
+						if (item.dataset.small !== undefined) {
+							item.classList.add("advantages__item--small");
+						}
+					});
+
+					interval = setInterval(() => {
+						const items = grid.getItems();
+						if (items.length < 2) return;
+						const [index1, index2] = getRandomIndexes(items.length);
+						swapItems(index1, index2);
+					}, 4000);
+				});
+			}
 		}
 
-		if (grid && grid._isDestroyed === false) {
-			grid.on("layoutEnd", function () {
-				animationInit();
-			});
-		}
+		animationInit();
 
 		const advantagesSection = document.querySelector(".advantages");
 
@@ -117,18 +133,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 				if (width < 768) {
 					gridDestroy();
+					clearInterval(interval);
 				} else {
 					gridDestroy();
 					clearInterval(interval);
 					gridInit();
-					grid.on("layoutEnd", function () {
-						animationInit();
-					});
+					animationInit();
 				}
 			}
 		});
 
 		sectionResizeObserver.observe(advantagesSection);
+
+		document.addEventListener("visibilitychange", () => {
+			if (document.hidden) {
+				gridElement.style.opacity = "0";
+				gridDestroy();
+				clearInterval(interval);
+			} else {
+				setTimeout(() => {
+					gridElement.style.opacity = "1";
+					gridDestroy();
+					clearInterval(interval);
+					gridInit();
+					animationInit();
+				}, 300);
+			}
+		});
 
 		if (window.matchMedia("(max-width: 767px)").matches && !grid._isDestroyed) {
 			gridDestroy();

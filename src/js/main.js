@@ -1,7 +1,3 @@
-/* Libraries */
-//= ../../node_modules/swiper/swiper-bundle.js
-//= ./libs/muuri.min.js
-
 /* Common */
 //= ./partials/swiper-init.js
 //= ./partials/header.js

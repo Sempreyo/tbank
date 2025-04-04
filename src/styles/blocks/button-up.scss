@@ -14,7 +14,7 @@
 	cursor: pointer;
 
 	@include max(tl) {
-		bottom: 30px;
+		bottom: 15px;
 	}
 
 	&--visible {

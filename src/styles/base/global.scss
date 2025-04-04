@@ -110,10 +110,13 @@ ol {
 
 /* Mobile-menu */
 [data-state="mobile-menu"] {
-	overflow: hidden;
-
 	.header__menu-wrapper {
 		transform: translateX(0);
+	}
+
+	.overlay {
+		opacity: 1;
+		pointer-events: auto;
 	}
 }
 
@@ -164,20 +167,6 @@ ol {
 		&:hover {
 			text-decoration: none;
 		}
-	}
-}
-
-/* Mobile-menu */
-[data-state="mobile-menu"] {
-	overflow: hidden;
-
-	.header__menu-wrapper {
-		transform: translateX(0);
-	}
-
-	.overlay {
-		opacity: 1;
-		pointer-events: auto;
 	}
 }
 

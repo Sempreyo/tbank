@@ -1,0 +1,57 @@
+.title-quote {
+	padding: 0 0 40px;
+
+	@include max(ti) {
+		padding: 0 0 20px;
+	}
+
+	&__wrapper {
+		display: flex;
+		gap: 20px;
+
+		@include max(t) {
+			flex-direction: column;
+			gap: 10px;
+		}
+	}
+
+	&__quote {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		min-width: 260px;
+	}
+
+	&__image {
+		width: 100px;
+		height: 100px;
+		border-radius: 15px;
+		background-color: $white;
+		overflow: hidden;
+		box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+
+		@include max(ti) {
+			width: 80px;
+			height: 80px;
+		}
+
+		@include max(t) {
+			width: 100px;
+			height: 100px;
+		}
+	}
+
+	&__name {
+		font-size: 20px;
+		text-align: center;
+		margin-top: 5px;
+
+		@include max(ti) {
+			font-size: 18px;
+		}
+
+		@include max(t) {
+			font-size: 16px;
+		}
+	}
+}

@@ -2,8 +2,7 @@
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	padding: 164px 0 0;
+	padding: 130px 0 0;
 	background: linear-gradient(180deg, #ffffff 0%, #c2d5e2 19.03%, #4981a9 36.48%, #1e6395 50.2%, #1d2e4e 100%);
 	border-radius: 0 0 40px 40px;
 	overflow: hidden;
@@ -20,9 +19,17 @@
 		display: flex;
 		justify-content: flex-end;
 		position: absolute;
-		bottom: 60px;
+		bottom: 55px;
 		left: 50%;
 		transform: translateX(-50%);
+
+		@include max(1320) {
+			bottom: 30px;
+		}
+
+		@include max(1080) {
+			bottom: 15px;
+		}
 
 		@include max(tl) {
 			justify-content: flex-start;
@@ -30,7 +37,7 @@
 			bottom: unset;
 			left: unset;
 			transform: unset;
-			margin-top: 20px;
+			margin: 20px 0;
 		}
 	}
 
@@ -43,24 +50,34 @@
 		margin-top: 36px;
 		font-size: 24px;
 
+		@include max(dxl) {
+			font-size: fluid(22, 24, 1280, 1680);
+		}
+
 		@include max(d) {
-			font-size: fluid(22, 24, 992, 1280);
+			font-size: fluid(20, 22, 992, 1280);
 		}
 
 		@include max(tl) {
-			font-size: fluid(20, 22, 768, 992);
+			font-size: fluid(18, 20, 768, 992);
 			margin-top: 10px;
 		}
 
 		@include max(ti) {
-			font-size: fluid(18, 20, 0, 768);
+			font-size: fluid(16, 18, 0, 768);
 		}
 	}
 
 	&__bg {
-		margin-top: -37px;
+		max-width: 100%;
+		margin: -100px auto -130px;
 		stroke-dasharray: 3000;
 		stroke-dashoffset: 3000;
+		pointer-events: none;
+
+		@include max(tl) {
+			margin: -100px auto 0;
+		}
 
 		@include max(ti) {
 			margin-top: 0;

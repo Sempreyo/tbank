@@ -1,0 +1,38 @@
+.home-link {
+	position: fixed;
+	left: 20px;
+	bottom: 20px;
+	width: 100%;
+	z-index: 12;
+	pointer-events: none;
+
+	@include max(tl) {
+		bottom: 10px;
+	}
+
+	&__link {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		color: $white;
+		background-color: $color-text;
+		font-size: 18px;
+		text-transform: uppercase;
+		pointer-events: auto;
+		padding: 8px 20px;
+		border-radius: 5px;
+		transition: 0.3s ease;
+
+		@include max(tl) {
+			font-size: 14px;
+		}
+
+		&:hover {
+			background-color: rgba($color-text, 0.7);
+		}
+
+		svg {
+			color: $white;
+		}
+	}
+}

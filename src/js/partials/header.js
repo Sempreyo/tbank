@@ -17,7 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	burger.addEventListener("click", openNav);
 	closeButtonMenu.addEventListener("click", openNav);
 	overlay.addEventListener("click", openNav);
-	/*const HEADER_SCROLL_BG = 50;
+
+	/* Смарт хэдер */
+	const HEADER_SCROLL_BG = 50;
 	const HEADER_SCROLL_HIDE = 400;
 	const header = document.querySelector(".header");
 	let previousTop = window.scrollY;
@@ -33,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			header.classList.remove("header--bg");
 		}
 
-		if (currentTop > HEADER_SCROLL_HIDE && currentTop > previousTop) {
+		if (currentTop > HEADER_SCROLL_HIDE && currentTop > previousTop && document.body.dataset.state !== "mobile-menu") {
 			header.classList.add("header--hide");
 		} else {
 			header.classList.remove("header--hide");
@@ -45,5 +47,5 @@ document.addEventListener("DOMContentLoaded", () => {
 		setHeaderStyles();
 	});
 
-	setHeaderStyles();*/
+	setHeaderStyles();
 });

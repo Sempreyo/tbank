@@ -1,8 +1,22 @@
 .custom-content {
+	$parent: &;
+
 	padding: 0 0 40px;
 
 	@include max(ti) {
 		padding: 0 0 20px;
+	}
+
+	&--title-offset {
+		padding: 20px 0 15px;
+
+		@include max(tl) {
+			padding: 0 0 15px;
+		}
+
+		@include max(ti) {
+			padding: 10px 0 15px;
+		}
 	}
 
 	.article-subtitle {
@@ -67,10 +81,21 @@
 
 	&__image {
 		display: block;
+		max-width: 60%;
 		width: 100%;
 		border-radius: 15px;
 		overflow: hidden;
 		margin-bottom: 20px;
+		margin-left: auto;
+		margin-right: auto;
+
+		@include max(tl) {
+			max-width: 70%;
+		}
+
+		@include max(t) {
+			max-width: 90%;
+		}
 
 		img {
 			width: 100%;
@@ -84,9 +109,30 @@
 		}
 	}
 
-	&__image-caption {
-		font-size: 10px;
-		text-align: center;
-		margin-top: -10px;
+	&__images {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+		margin-bottom: 40px;
+
+		@include max(ti) {
+			grid-template-columns: repeat(1, 1fr);
+			margin-bottom: 20px;
+		}
+
+		#{$parent} {
+			&__image {
+				max-width: 100%;
+				margin-bottom: 0;
+
+				img {
+					aspect-ratio: 16 / 9;
+
+					@include max(ti) {
+						aspect-ratio: 16 / 9;
+					}
+				}
+			}
+		}
 	}
 }

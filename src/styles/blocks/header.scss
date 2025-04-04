@@ -1,12 +1,12 @@
 .header {
 	$parent: &;
 
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 10;
 	width: 100%;
-	padding: 48px 0 20px;
+	padding: 20px 0;
 	transition: 0.5s ease;
 
 	@include max(ti) {
@@ -14,8 +14,6 @@
 	}
 
 	&--inner {
-		padding: 33px 0 20px;
-
 		#{$parent} {
 			&__container {
 				align-items: center;
@@ -29,30 +27,13 @@
 				width: 82px;
 				height: 16px;
 			}
-
-			&__burger {
-				position: relative;
-				right: unset;
-				bottom: unset;
-				min-width: 60px;
-				max-width: 60px;
-				height: 60px;
-				padding: 17px;
-
-				@include max(ti) {
-					min-width: 30px;
-					max-width: 30px;
-					height: 30px;
-					padding: 6px;
-				}
-			}
 		}
 	}
 
 	&--bg {
 		background-color: $white;
 		box-shadow: 4px 4px 34px 0 rgba($black, 0.2);
-		padding: 40px 0;
+		border-radius: 0 0 15px 15px;
 	}
 
 	&--hide {
@@ -61,12 +42,11 @@
 
 	&__container {
 		display: flex;
-		align-items: flex-end;
+		align-items: center;
 		justify-content: space-between;
 		gap: 20px;
 
 		@include max(ti) {
-			align-items: center;
 			gap: 10px;
 		}
 	}
@@ -87,9 +67,7 @@
 	}
 
 	&__right {
-		@include max(ti) {
-			gap: 15px;
-		}
+		gap: 15px;
 	}
 
 	&__logo-ic {
@@ -123,9 +101,6 @@
 	}
 
 	&__burger {
-		position: absolute;
-		right: 0;
-		bottom: -98px;
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -234,6 +209,11 @@
 		display: flex;
 		flex-direction: column;
 		gap: 28px;
+	}
+
+	&__menu-scroll {
+		max-height: calc(100vh - 80px);
+		overflow-y: auto;
 	}
 
 	&__menu-item-type {
