@@ -184,35 +184,47 @@
 			}
 		}
 
-		&--small #{$parent}__text {
-			font-size: 24px;
-			line-height: 1;
-
-			@include max(d) {
-				font-size: fluid(22, 24, 992, 1280);
-			}
-
+		&--small {
 			@include max(tl) {
-				font-size: fluid(20, 22, 768, 992);
+				padding: 10px 6px;
 			}
 
 			@include max(ti) {
-				font-size: fluid(14, 20, 0, 768);
+				padding: 10px 8px 10px 15px;
 			}
 
-			span {
-				font-size: 40px;
+			#{$parent} {
+				&__text {
+					font-size: 24px;
+					line-height: 1;
 
-				@include max(d) {
-					font-size: fluid(30, 40, 992, 1280);
+					@include max(d) {
+						font-size: fluid(20, 24, 992, 1280);
+					}
+
+					@include max(tl) {
+						font-size: fluid(15, 20, 768, 992);
+					}
+
+					@include max(ti) {
+						font-size: fluid(14, 15, 0, 768);
+					}
 				}
 
-				@include max(tl) {
-					font-size: fluid(20, 30, 768, 992);
-				}
+				&__text-big {
+					font-size: 40px;
 
-				@include max(ti) {
-					font-size: fluid(16, 20, 0, 768);
+					@include max(d) {
+						font-size: fluid(30, 40, 992, 1280);
+					}
+
+					@include max(tl) {
+						font-size: fluid(18, 25, 768, 992);
+					}
+
+					@include max(ti) {
+						font-size: fluid(15, 18, 0, 768);
+					}
 				}
 			}
 		}
@@ -264,22 +276,22 @@
 		@include max(ti) {
 			font-size: fluid(14, 20, 0, 768);
 		}
+	}
 
-		span {
-			font-size: 74px;
-			line-height: 1;
+	&__text-big {
+		font-size: 68px;
+		line-height: 1;
 
-			@include max(d) {
-				font-size: fluid(56, 74, 992, 1280);
-			}
+		@include max(d) {
+			font-size: fluid(56, 68, 992, 1280);
+		}
 
-			@include max(tl) {
-				font-size: fluid(37, 56, 768, 992);
-			}
+		@include max(tl) {
+			font-size: fluid(37, 56, 768, 992);
+		}
 
-			@include max(ti) {
-				font-size: fluid(22, 37, 0, 768);
-			}
+		@include max(ti) {
+			font-size: fluid(22, 37, 0, 768);
 		}
 	}
 }

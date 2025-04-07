@@ -107,7 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			if (grid && grid._isDestroyed === false) {
 				grid.on("layoutEnd", function () {
 					items.forEach(item => {
-						console.log(item.dataset.small !== undefined)
 						if (item.dataset.small !== undefined) {
 							item.classList.add("advantages__item--small");
 						}

@@ -28,6 +28,25 @@ document.addEventListener("DOMContentLoaded", () => {
 		const menuBorders2 = articleCarousel2.querySelectorAll(".circle-menu__border-item");
 		const menuIcons1 = articleCarousel1.querySelectorAll(".circle-menu__centered-icon");
 		const menuIcons2 = articleCarousel2.querySelectorAll(".circle-menu__centered-icon");
+		const aricleTitles1 = articleCarousel1.querySelectorAll(".article__title");
+		const aricleTitles2 = articleCarousel2.querySelectorAll(".article__title");
+		const aricleContents1 = articleCarousel1.querySelectorAll(".article__person");
+		const aricleContents2 = articleCarousel2.querySelectorAll(".article__person");
+
+		const setMaxHeight = (elems) => {
+			elems.forEach(el => el.style.height = "auto");
+
+			const max =  Math.max(...[...elems].map(el => el.offsetHeight));
+
+			elems.forEach(el => {
+				el.style.height = `${max}px`;
+			});
+		}
+
+		setMaxHeight(aricleTitles1);
+		setMaxHeight(aricleTitles2);
+		setMaxHeight(aricleContents1);
+		setMaxHeight(aricleContents2);
 
 		const activateMenu = (activeIndex, border, icon, isNextSwipers=false) => { // isNextSwipers для расчета индексов элементов следующих после первого свайперов
 			border.forEach(border => border.classList.remove("active"));
@@ -168,6 +187,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		slider1.init();
 		slider2.init();
+
+		const articlesSections = document.querySelectorAll(".article");
+
+		if (articlesSections && articlesSections.length > 0) {
+			const articleResizeObserver = new ResizeObserver(entries => {
+				setMaxHeight(aricleTitles1);
+				setMaxHeight(aricleTitles2);
+				setMaxHeight(aricleContents1);
+				setMaxHeight(aricleContents2);
+			});
+
+			articlesSections.forEach(article => {
+				articleResizeObserver.observe(article);
+			});
+		}
 	}
 
 	/* Горизонтальный прокручивающийся слайдер с карточками */
